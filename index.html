@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suryanshu's Sum of Subsets Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Suryanshu's Sum of Subsets Simulator</h1>
+            <p class="subtitle">A visual approach to the classic backtracking algorithm</p>
+        </header>
+
+        <section class="input-panel">
+            <div class="form-group">
+                <label for="input-set">Input Set (comma separated)</label>
+                <input type="text" id="input-set" placeholder="e.g., 3, 5, 6, 7, 8" value="3, 5, 6, 7, 8">
+            </div>
+            <div class="form-group">
+                <label for="target-sum">Target Sum</label>
+                <input type="number" id="target-sum" placeholder="Enter target sum" value="15">
+            </div>
+            <div class="button-group">
+                <button id="solve-btn" class="primary-btn">Solve</button>
+                <button id="step-btn" class="secondary-btn">Step by Step</button>
+                <button id="reset-btn" class="secondary-btn">Reset</button>
+            </div>
+        </section>
+
+        <section class="visualization-area">
+            <div class="info-panel">
+                <div class="info-card">
+                    <h3>Original Set</h3>
+                    <div id="original-set" class="number-display"></div>
+                </div>
+                <div class="info-card">
+                    <h3>Target Sum: <span id="target-display">15</span></h3>
+                </div>
+                <div class="info-card">
+                    <h3>Current Subset</h3>
+                    <div id="current-subset" class="number-display"><span class="empty-message">Empty</span></div>
+                    <h4>Current Sum: <span id="current-sum">0</span></h4>
+                </div>
+            </div>
+
+            <div class="execution-panel">
+                <h3>Execution Trace</h3>
+                <div id="execution-log" class="scrollable-area"></div>
+            </div>
+
+            <div class="tree-panel">
+                <h3>Decision Tree</h3>
+                <div id="decision-tree" class="scrollable-area"></div>
+            </div>
+        </section>
+
+        <section class="results-panel">
+            <h3>Solutions</h3>
+            <div id="solutions" class="solutions-container">
+                <span class="empty-message">Run the algorithm to find solutions</span>
+            </div>
+        </section>
+
+        <section class="explanation-panel">
+            <h3><i class="fas fa-lightbulb"></i> Algorithm Explanation</h3>
+            <div class="explanation-content">
+                <p>The <strong>Sum of Subsets</strong> problem is a classic example of backtracking algorithms. The goal is to find all subsets of a given set whose elements sum to a specified target value.</p>
+                
+                <div class="explanation-card">
+                    <h4>How the Algorithm Works</h4>
+                    <ol>
+                        <li>For each element in the set, we have two choices: include it or exclude it.</li>
+                        <li>We recursively explore both choices, building our solution incrementally.</li>
+                        <li>If at any point the current sum exceeds the target, we backtrack (prune that branch).</li>
+                        <li>If we reach the target sum exactly, we've found a valid solution.</li>
+                    </ol>
+                </div>
+                
+                <div class="explanation-card">
+                    <h4>Complexity Analysis</h4>
+                    <ul>
+                        <li><strong>Time Complexity:</strong> O(2ⁿ) in the worst case, where n is the number of elements.</li>
+                        <li><strong>Space Complexity:</strong> O(n) for the recursion stack and to store the current subset.</li>
+                    </ul>
+                </div>
+                
+                <div class="explanation-card">
+                    <h4>Applications</h4>
+                    <ul>
+                        <li>Resource allocation problems</li>
+                        <li>Financial portfolio optimization</li>
+                        <li>Cryptographic systems</li>
+                        <li>Puzzle-solving applications</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Developed for Algorithm Analysis Lab CA 2 by Suryanshu Banerjee | &copy; 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
